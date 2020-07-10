@@ -4,7 +4,6 @@
 // File name: projects/01/And.hdl
 
 /**
- * test change
  * And gate: 
  * out = 1 if (a == 1 and b == 1)
  *       0 otherwise
@@ -15,5 +14,7 @@ CHIP And {
     OUT out;
 
     PARTS:
-    // Put your code here:
+    Nand (a=a, b=b, out=nandAb);
+    Nand (a=b, b=a, out=nandBa);
+    Nand (a=nandAb, b=nandBa, out=out);
 }
