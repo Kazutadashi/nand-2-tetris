@@ -9,6 +9,8 @@
  *       0 otherwise
  */
 
+// To design this chip, I used DeMorgan's Law to pull out and OR that
+// could then be negated using Boolean Algebra
 CHIP Or {
     IN a, b;
     OUT out;
