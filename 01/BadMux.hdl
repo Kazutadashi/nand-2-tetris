@@ -10,8 +10,10 @@
  */
 
 // This was also made by first finding the canonical representation. 
-// Note that this is not the best implementation of MUX. 
-CHIP Mux {
+// Note that this is not the best implementation of MUX. Renamed this file
+// to BadMux after practicing more boolean algebra and finding a 
+// much simpler solution.
+CHIP BadMux {
     IN a, b, sel;
     OUT out;
 
