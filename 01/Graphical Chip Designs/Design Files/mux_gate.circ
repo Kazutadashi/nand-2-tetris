@@ -53,118 +53,51 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(360,210)" to="(420,210)"/>
-    <wire from="(360,190)" to="(420,190)"/>
-    <wire from="(140,530)" to="(140,600)"/>
-    <wire from="(560,370)" to="(600,370)"/>
-    <wire from="(560,390)" to="(600,390)"/>
-    <wire from="(470,200)" to="(470,280)"/>
-    <wire from="(560,290)" to="(560,370)"/>
-    <wire from="(200,130)" to="(240,130)"/>
-    <wire from="(200,310)" to="(240,310)"/>
-    <wire from="(470,280)" to="(510,280)"/>
-    <wire from="(470,300)" to="(510,300)"/>
-    <wire from="(130,410)" to="(160,410)"/>
-    <wire from="(140,80)" to="(170,80)"/>
-    <wire from="(200,80)" to="(230,80)"/>
-    <wire from="(360,210)" to="(360,310)"/>
-    <wire from="(110,530)" to="(140,530)"/>
-    <wire from="(140,430)" to="(230,430)"/>
-    <wire from="(130,580)" to="(220,580)"/>
-    <wire from="(140,430)" to="(140,530)"/>
-    <wire from="(110,360)" to="(200,360)"/>
-    <wire from="(140,260)" to="(140,430)"/>
-    <wire from="(280,70)" to="(300,70)"/>
-    <wire from="(280,250)" to="(300,250)"/>
-    <wire from="(130,410)" to="(130,580)"/>
-    <wire from="(200,480)" to="(200,650)"/>
-    <wire from="(110,180)" to="(130,180)"/>
-    <wire from="(300,120)" to="(310,120)"/>
-    <wire from="(300,300)" to="(310,300)"/>
-    <wire from="(140,600)" to="(220,600)"/>
-    <wire from="(140,80)" to="(140,260)"/>
-    <wire from="(300,420)" to="(300,470)"/>
-    <wire from="(290,590)" to="(290,640)"/>
-    <wire from="(130,60)" to="(130,180)"/>
-    <wire from="(560,390)" to="(560,650)"/>
-    <wire from="(200,480)" to="(310,480)"/>
-    <wire from="(360,480)" to="(470,480)"/>
-    <wire from="(190,410)" to="(230,410)"/>
-    <wire from="(270,130)" to="(310,130)"/>
-    <wire from="(270,310)" to="(310,310)"/>
-    <wire from="(130,60)" to="(230,60)"/>
-    <wire from="(130,240)" to="(230,240)"/>
-    <wire from="(200,650)" to="(300,650)"/>
-    <wire from="(140,260)" to="(230,260)"/>
-    <wire from="(130,240)" to="(130,410)"/>
-    <wire from="(280,420)" to="(300,420)"/>
-    <wire from="(650,380)" to="(680,380)"/>
-    <wire from="(270,590)" to="(290,590)"/>
-    <wire from="(350,650)" to="(560,650)"/>
-    <wire from="(200,310)" to="(200,360)"/>
-    <wire from="(300,470)" to="(310,470)"/>
-    <wire from="(290,640)" to="(300,640)"/>
-    <wire from="(470,300)" to="(470,480)"/>
-    <wire from="(300,70)" to="(300,120)"/>
-    <wire from="(300,250)" to="(300,300)"/>
-    <wire from="(200,130)" to="(200,310)"/>
-    <wire from="(360,130)" to="(360,190)"/>
-    <wire from="(200,360)" to="(200,480)"/>
-    <wire from="(130,180)" to="(130,240)"/>
-    <comp lib="0" loc="(680,380)" name="Pin">
+    <wire from="(150,310)" to="(180,310)"/>
+    <wire from="(240,240)" to="(270,240)"/>
+    <wire from="(240,260)" to="(270,260)"/>
+    <wire from="(170,190)" to="(170,200)"/>
+    <wire from="(160,180)" to="(160,190)"/>
+    <wire from="(150,250)" to="(170,250)"/>
+    <wire from="(160,180)" to="(180,180)"/>
+    <wire from="(170,250)" to="(170,300)"/>
+    <wire from="(240,190)" to="(240,240)"/>
+    <wire from="(240,260)" to="(240,310)"/>
+    <wire from="(320,250)" to="(330,250)"/>
+    <wire from="(170,190)" to="(180,190)"/>
+    <wire from="(150,190)" to="(160,190)"/>
+    <wire from="(170,300)" to="(180,300)"/>
+    <wire from="(230,190)" to="(240,190)"/>
+    <wire from="(230,310)" to="(240,310)"/>
+    <wire from="(170,230)" to="(170,250)"/>
+    <comp lib="0" loc="(330,250)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="MUX"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(270,310)" name="NOT Gate"/>
-    <comp lib="1" loc="(350,650)" name="AND Gate">
+    <comp lib="1" loc="(230,190)" name="AND Gate">
       <a name="label" val="AND"/>
     </comp>
-    <comp lib="1" loc="(280,420)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="0" loc="(110,530)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="b"/>
-    </comp>
-    <comp lib="1" loc="(650,380)" name="OR Gate">
+    <comp lib="1" loc="(320,250)" name="OR Gate">
       <a name="label" val="OR"/>
     </comp>
-    <comp lib="1" loc="(270,130)" name="NOT Gate"/>
-    <comp lib="0" loc="(110,360)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="sel"/>
-    </comp>
-    <comp lib="1" loc="(560,290)" name="OR Gate">
-      <a name="label" val="OR"/>
-    </comp>
-    <comp lib="1" loc="(280,250)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="1" loc="(270,590)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="1" loc="(280,70)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="1" loc="(360,310)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="1" loc="(470,200)" name="OR Gate">
-      <a name="label" val="OR"/>
-    </comp>
-    <comp lib="0" loc="(110,180)" name="Pin">
+    <comp lib="0" loc="(150,190)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="a"/>
     </comp>
-    <comp lib="1" loc="(190,410)" name="NOT Gate"/>
-    <comp lib="1" loc="(360,130)" name="AND Gate">
+    <comp lib="0" loc="(150,310)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="b"/>
+    </comp>
+    <comp lib="0" loc="(150,250)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="sel"/>
+    </comp>
+    <comp lib="1" loc="(170,200)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(230,310)" name="AND Gate">
       <a name="label" val="AND"/>
     </comp>
-    <comp lib="1" loc="(360,480)" name="AND Gate">
-      <a name="label" val="AND"/>
-    </comp>
-    <comp lib="1" loc="(200,80)" name="NOT Gate"/>
   </circuit>
 </project>
