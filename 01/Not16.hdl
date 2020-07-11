@@ -8,7 +8,9 @@
  * for i=0..15: out[i] = not in[i]
  */
 
-//Note that the size of this "in" is only a single bit for the NOT chip.
+// Note that the size of this "in" is only a single bit for the 
+// NOT Chip. Remember to keep in mind that these bits are going
+// from right to left.
 
 CHIP Not16 {
     IN in[16];
