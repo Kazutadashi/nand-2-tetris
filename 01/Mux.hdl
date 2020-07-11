@@ -9,7 +9,8 @@
  *       b otherwise
  */
 
-// This was also made by first finding the canonical representation
+// This was also made by first finding the canonical representation. 
+// Note that this is not the best implementation of MUX. 
 CHIP Mux {
     IN a, b, sel;
     OUT out;
