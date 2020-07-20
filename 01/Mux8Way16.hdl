@@ -3,6 +3,16 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/01/Mux8Way16.hdl
 
+// Using a similar implementation here, but saving some code space
+// By using the Mux4Way chip.
+
+// A good way to think about Mux is like a tournament bracket,
+// where each input is a player, a the selectors are the judges.
+// Each pair of inputs (players) is competing against each other. 
+// The winner is selected by the selector
+// and then moves on to the next round, but eventually
+// there remains only 1 victor.
+
 /**
  * 8-way 16-bit multiplexor:
  * out = a if sel == 000
@@ -18,5 +28,11 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // First "rounds" involving matches with a/c, b/d, e/g, f/h. 2 winners 
+    // are picked here out of abcd, efgh
+    Mux4Way16(a=a, b=b, c=c, d=d, sel=sel[0..1], out=abcdMux);
+    Mux4Way16(a=e, b=f, c=g, d=h, sel=sel[0..1], out=efghMux);
+
+    // Second "round" involving the winners, to determine the victor
+    Mux16(a=abcdMux, b=efghMux, sel=sel[2], out=out);
 }
