@@ -3,6 +3,11 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/02/FullAdder.hdl
 
+// This was a very confusing chip for me to make, but I noticed that we can break it 
+// into two blocks, one consisting of when a is on, and one when a is off.
+// This let me break the problem down into two smaller issues, joined together
+// by multiplexors.
+
 /**
  * Computes the sum of three bits.
  */
@@ -13,5 +18,18 @@ CHIP FullAdder {
         carry;   // Left bit of a + b + c
 
     PARTS:
-    // Put you code here:
+    // Group 1 (Just the half adder essentially)
+    // Outputs are named as such because that is what is happening
+    // In the HalfAdder chip itself
+    HalfAdder(a=b, b=c, sum=group1XOR, carry=group1AND);
+
+    // Group 2
+    Xor(a=b, b=c, out=group2XOR);
+    Or(a=b, b=c, out=group2OR);
+    Not(in=group2XOR, out=notXOR);
+
+    // Adding together the two groups
+    Mux(a=group1XOR, b=notXOR, sel=a, out=sum);
+    Mux(a=group1AND, b=group2OR, sel=a, out=carry);
+
 }
