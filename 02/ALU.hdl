@@ -29,12 +29,12 @@
 CHIP ALU {
     IN  
         x[16], y[16],  // 16-bit inputs        
-        zx, // zero the x input?
-        nx, // negate the x input?
-        zy, // zero the y input?
-        ny, // negate the y input?
+        zx, // zero the x input
+        nx, // negate the x input
+        zy, // zero the y input
+        ny, // negate the y input
         f,  // compute out = x + y (if 1) or x & y (if 0)
-        no; // negate the out output?
+        no; // negate the out output
 
     OUT 
         out[16], // 16-bit output
@@ -42,5 +42,40 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    
+    // The zx bit
+    Not16(in=x, out=notx);
+    Add16(a=x, b=notx, out=all1x);
+    Not16(in=all1x, out=all0x);
+    Mux16(a=x, b=all0x, sel=zx, out=xAfterzx);
+
+    // The nx bit
+    Not16(in=xAfterzx, out=notxAfterzx);
+    Mux16(a=xAfterzx, b=notxAfterzx, sel=nx, out=xAfternx);
+
+    // The zy bit
+    Not16(in=y, out=noty);
+    Add16(a=y, b=noty, out=all1y);
+    Not16(in=all1y, out=all0y);
+    Mux16(a=y, b=all0y, sel=zy, out=yAfterzy);
+
+    // The ny bit
+    Not16(in=yAfterzy, out=notyAfterzy);
+    Mux16(a=yAfterzy, b=notyAfterzy, sel=ny, out=yAfterny);
+
+    // The f bit
+    And16(a=xAfternx, b=yAfterny, out=nxAndny);
+    Add16(a=xAfternx, b=yAfterny, out=nxPlusny);
+    Mux16(a=nxAndny, b=nxPlusny, sel=f, out=xfy);
+
+    // The no bit and stats
+    Not16(in=xfy, out=notxfy);
+    Mux16(a=xfy, b=notxfy, sel=no, out=final, out[15]=ng);
+    
+    Not16(in=final, out=notfinal);  // This is used because this emulator does not support using the OUT pins as chip inputs
+    Not16(in=notfinal, out=out);
+    
+    Or16Way(in=final, out=finalOR);  
+    Not(in=finalOR, out=zr);                               
+
 }
