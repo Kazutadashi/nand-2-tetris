@@ -73,7 +73,7 @@ CHIP ALU {
     Mux16(a=xfy, b=notxfy, sel=no, out=final, out[15]=ng);
     
     Not16(in=final, out=notfinal);  // This is used because this emulator does not support using the OUT pins as chip inputs
-    Not16(in=notfinal, out=out);
+    Not16(in=notfinal, out=out);    // We need to use the output of the previous Mux16 (the final chip) to set zr
     
     Or16Way(in=final, out=finalOR);  
     Not(in=finalOR, out=zr);                               
