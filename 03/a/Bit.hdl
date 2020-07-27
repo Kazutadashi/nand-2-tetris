@@ -3,6 +3,12 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/a/Bit.hdl
 
+
+// Note the DFF implementation in logisim is slightly different because the chip requires
+// more complicated inputs for controlling asynchronicity. Therefore
+// There is no diagram or circ file associated, but the test bench will still be
+// uploading for future reference.
+
 /**
  * 1-bit register:
  * If load[t] == 1 then out[t+1] = in[t]
@@ -14,5 +20,7 @@ CHIP Bit {
     OUT out;
 
     PARTS:
-    // Put your code here:
+    DFF(in=muxout, out=out, out=dffout);
+    Mux(a=dffout, b=in, sel=load, out=muxout);
+    
 }
