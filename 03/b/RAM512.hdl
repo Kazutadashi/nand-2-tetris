@@ -3,8 +3,7 @@
 // MIT Press. Book site: www.idc.ac.il/tecs
 // File name: projects/03/b/RAM512.hdl
 
-// There is no diagram for the rest of these chips as they are simply extensions
-// of the same idea as before. The critical part to note here is that each group of 3 
+// The critical part to note here is that each group of 3 
 // bits in the address takes you into some other "level" of the ram chip
 
 /**
