@@ -16,5 +16,19 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Incrementor
+    Inc16(in=registerOut, out=incrementedNumber);
+    Mux16(a=in, b=incrementedNumber, sel=inc, out=mux0Out);
+
+    // Loader
+    Mux16(a=mux0Out, b=in, sel=load, out=mux1Out);
+    Not16(in=mux1Out, out=notOut);
+    
+    // Reset
+    Add16(a=mux1Out, b=notOut, out=addedNumber);
+    Not16(in=addedNumber, out=zeroedNumber);
+    Mux16(a=mux1Out, b=zeroedNumber, sel=reset, out=mux2Out);
+
+    // Final Output
+    Register(in=mux2Out, load=true, out=registerOut, out=out); // load=true because the PC is always "running"
 }
